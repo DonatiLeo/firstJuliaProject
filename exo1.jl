@@ -41,6 +41,29 @@ function pgcd(a, b)
     end
 end
 
+# how to represent polynomials in julia
+# p(x) = 2x^2 + 3x + 1
+
+# define a type for polynomials in Julia
+struct Polynome
+    coeff::Array{Int64, 1}
+end
+
+# write a function to evaluate a polynomial
+function evalPoly(pol, x)
+    n = length(pol.coeff)
+    s = 0
+    for i in 1:n
+        s += pol.coeff[i] * x^(i-1)
+    end
+    return s
+end
+    
+#give an example of a polynomial
+p = Polynome([1.0, 2.0, 3.0])
+
+# evaluate the polynomial at x = 2
+evalPoly(p, 2)
 
 
 
